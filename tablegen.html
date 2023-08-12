@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Generator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #d0 {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #d1 {
+            margin-top: 95px;
+            height: 400px;
+            width: 600px;
+            border: 5px solid black;
+            box-shadow: 3px 3px 4px 3px black;
+        }
+
+        #d2 {
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            height: 50px;
+        }
+
+        .box {
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #i2 {
+            height:30px;
+            width: 64px;
+            background-color: rgb(238, 209, 238);
+            font-weight: bolder;
+        }
+
+        #tb {
+            height: 350px;
+            display: grid;
+            grid-template-rows: repeat(10, 35px);
+            justify-content: center;
+            align-items: center;
+            background-color: yellow;
+        }
+
+        .col {
+            font-size: 20px;
+            font-weight: bolder;
+            color: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #sub{
+            height:52px;
+            width:200px;
+            background-color: chartreuse;
+            font-size: larger;
+            border-top: 0px;
+            border-bottom: 4px solid black;
+            border-left: 4px solid black;
+
+        }
+        #bus{
+            height:52px;
+            width:200px;
+            background-color: red;
+            font-size: larger;
+            border-top: 0px;
+            border-bottom: 4px solid black;
+
+        }
+        #b1{
+            height:50px;
+            width:200px;
+            background-color: violet;
+            font-size: larger;
+            border: 2px solid black;
+            border-bottom: 4px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d0">
+        <div id="d1">
+            <div id="d2">
+                <div class="box" id="b1">Table of :&nbsp&nbsp <input type="text" id="i2" placeholder=" enter no.&nbsp"> </div>
+                <div class="box"> <button id="sub">Generate</button> </div>
+                <div class="box"> <button id="bus">Re-set</button></div>
+            </div>
+            <div id="tb">
+                <div class="col" id="1"></div>
+                <div class="col" id="2"></div>
+                <div class="col" id="3"></div>
+                <div class="col" id="4"></div>
+                <div class="col" id="5"></div>
+                <div class="col" id="6"></div>
+                <div class="col" id="7"></div>
+                <div class="col" id="8"></div>
+                <div class="col" id="9"></div>
+                <div class="col" id="10"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var y = document.getElementById("i2");
+        var z = document.getElementById("sub");
+
+        z.addEventListener("click", function () {
+            var x = y.value;
+
+            for (var i = 1; i <= 10; i++) {
+                result = x + " x " + i + " = " + x * i;
+                n = i + ''
+                document.getElementById(n).innerText = result;
+
+            }
+        });
+
+        var p = document.getElementById("bus");
+        p.addEventListener('click',function(){
+            location.reload();
+            });
+
+
+    </script>
+</body>
+
+</html>
